@@ -7,16 +7,13 @@ Get Measurements of body using just two pics
 Use python 3.6 or higher
 download models by running getmodels.sh
 
-```bash
-pip install requirements.txt
-```
+
 
 ## Usage
 
 if using Anaconda
 conda create --name bodyMeasure
 conda activate bodyMeasure
-
 
 ```bash
 pip install requirements.txt
