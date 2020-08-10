@@ -120,28 +120,29 @@ def bodyMeasureHorizontal(frame,height,net):
 
     measurementsOut = {'height':high_cm,
                     'head lenght':distance(head,high,fact_high),
-                    'shoulder height':distance(shoulder,high,fact_high),
+                    'shoulder width':distance(shoulder,high,fact_high),
                     'chest width': distance(chest,high,fact_high),
                     "arm's length ":max([distance(right_elbow,high,fact_high),distance(left_elbow,high,fact_high)]),
                     'hand length ':max([distance(right_wrist,high,fact_high),distance(left_wirst,high,fact_high)]),
                     'hip width' : distance(hip,high,fact_high),
                     'calf length':max([distance(right_knee,high,fact_high),distance(left_knee,high,fact_high)]),
                     'foot length':max([distance(right_ankle,high,fact_high),distance(left_ankle,high,fact_high)])}
-    print('height:',high_cm)
-    print('head lenght:',distance(head,high,fact_high))
-    print('shoulder height:',distance(shoulder,high,fact_high))
-    print('chest width:',distance(chest,high,fact_high))
-    print("arm's length :",max([distance(right_elbow,high,fact_high),distance(left_elbow,high,fact_high)]))
-    print('hand length :',max([distance(right_wrist,high,fact_high),distance(left_wirst,high,fact_high)]))
-    print('hip width:',distance(hip,high,fact_high))
-    print('calf length :',max([distance(right_knee,high,fact_high),distance(left_knee,high,fact_high)]))
-    print('foot length :',max([distance(right_ankle,high,fact_high),distance(left_ankle,high,fact_high)]))
+    #print('height:',high_cm)
+    #print('head lenght:',distance(head,high,fact_high))
+    #print('shoulder height:',distance(shoulder,high,fact_high))
+    #print('chest width:',distance(chest,high,fact_high))
+    #print("arm's length :",max([distance(right_elbow,high,fact_high),distance(left_elbow,high,fact_high)]))
+    #print('hand length :',max([distance(right_wrist,high,fact_high),distance(left_wirst,high,fact_high)]))
+    #print('hip width:',distance(hip,high,fact_high))
+    #print('calf length :',max([distance(right_knee,high,fact_high),distance(left_knee,high,fact_high)]))
+    #print('foot length :',max([distance(right_ankle,high,fact_high),distance(left_ankle,high,fact_high)]))
 
-    #width = round(frameWidth/frameHeight*480)
-    #height = 480
-    #dim = (width, height)
-    #resized = cv2.resize(frame, dim, interpolation = cv2.INTER_AREA)
-    #cv2.imshow("Output-Keypoints",frame)
-    #cv2.waitKey(0)
+    width = round(frameWidth/frameHeight*480)
+    height = 480
+    dim = (1024, 720)
+    resized = cv2.resize(frame, dim, interpolation = cv2.INTER_AREA)
+    cv2.imshow("Output-Keypoints",resized)
+    cv2.imwrite('keypoints.jpg', frame) 
+    cv2.waitKey(0)
     cv2.destroyAllWindows()
     return frame,measurementsOut

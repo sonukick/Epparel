@@ -122,13 +122,12 @@ def measure_lateral(frame,high_cm,demo,net):
     lateral_waist = distance(waist,high,high_cm)
     lateral_hip = distance(hip,high,high_cm)
 
-    """
-    if demo == True:
-        resized = cv2.resize(frame, dim, interpolation = cv2.INTER_AREA)
-        cv2.imshow("Output-Keypoints",resized)
-        cv2.waitKey(0)
-        cv2.destroyAllWindows()
-    """
+    resized = cv2.resize(frame, dim, interpolation = cv2.INTER_AREA)
+    cv2.imwrite('keypoints-lateral.jpg', frame)
+    cv2.imshow("Output-Keypoints",resized)
+    cv2.waitKey(0)
+    cv2.destroyAllWindows()
+
     return lateral_chest,lateral_waist,lateral_hip,frame
 
 
